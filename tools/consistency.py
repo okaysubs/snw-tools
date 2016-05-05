@@ -42,16 +42,19 @@ def main(folder):
 
    
 def testfile(fname, transdict):
+    shortname = fname.rsplit("data.afs" + os.sep, 1)[1]
     filename = fname.rsplit(os.sep, 1)[1]
-    if filename.startswith('.') or filename.endswith('~') or filename.startswith('ev99') or "conflicted" in filename:
+    if not filename.endswith(".txt"):
+        return
+    if filename.startswith('.') or filename.endswith('~') or 'ev99' in fname or "conflicted" in filename:
         return
     with open(fname, 'rb') as f:
         start = f.read(10)
         f.seek(0)
         if b'-------' in start:
-            linelist = parsestringfile(f, filename)
+            linelist = parsestringfile(f, shortname)
         else:
-            linelist = Parser(f).parse_script(filename)
+            linelist = Parser(f).parse_script(shortname)
             
     for i in linelist:
         if i[3] not in transdict:
