@@ -62,11 +62,11 @@ All below tools can be found in the `tools` directory.
    You can *optionally* copy only the files you deem relevant to another directory (e.g. a shared Dropbox folder) and use `alter.py` to copy over files from there
    to the original folder, as long as the folder structure is kept intact:
 
-    `python3 alter.py /path/to/extracted/files /path/to/working/folder`
+    `python3 alter.py /path/to/data.afs /path/to/working/folder`
 
 5. *(Optional)* Use `consistency.py` to do some basic consistency checking on the script:
 
-    `python3 consistency.py /path/to/extracted/files`
+    `python3 consistency.py /path/to/data.afs`
 
 5. Use `repack.py` with the generated metadata file to recursively repack the files into `data.afs`:
 
