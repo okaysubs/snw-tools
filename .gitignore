@@ -2,3 +2,13 @@
 thumbs.db
 *.pyc
 __pycache__
+*.meta
+*.log
+*.marc*
+*.afs
+*.txt
+*.dfc
+tmp*
+*.exe
+*.iso
+snw_gp_archive
