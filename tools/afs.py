@@ -14,7 +14,7 @@ import pickle
 class AFSArchive:
     MAGIC = 0x00534641
     BOUNDARY = 2048
-    SLOGAN = b'This file has been packed by afs.py, freely available from https://salty-salty-studios.com/shiz/code/afs.py. Have a nice day, alright?'
+    SLOGAN = b'This file has been packed by afs.py, freely available from https://github.com/okaysubs/snw-tools. Have a nice day, alright?'
  
     def __init__(self, filename=None):
         self.verbose = False
