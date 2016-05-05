@@ -2,9 +2,8 @@
 
 ## Overview
 
-[Sora no Woto: Otome no Gojuusou](https://vndb.org/v5304) is a PSP visual novel that uses,
-among its seemingly custom script and font format,
-a bunch of [CRI](https://en.wikipedia.org/wiki/CRI_Middleware) middleware.
+[Sora no Woto: Otome no Gojuusou](https://vndb.org/v5304) is a PSP visual novel that uses
+a bunch of Dreamcast-era [CRI](https://en.wikipedia.org/wiki/CRI_Middleware) middleware.
 
 More interesting however were the (seemingly) custom image, script and font formats.
 A blog post is on its way describing our progress in figuring out the semantics of these formats.
@@ -46,6 +45,18 @@ All below tools can be found in the `tools` directory.
 * `evtres.py`: Perform character analysis on scripts for font purposes.
 * `encvis.py` and `evis.py`: Parse and visualize the script structure in EV files.
 * `evisscan.py`: Scan EV file script structure for certain commands.
+
+## Other things
+
+The `prxpatch` directory contains a PSP kernel module (.prx file) to impose upon the game and force the
+system OSD to display things in English instead of Japanese.
+It was based off [Codestation's prxpatch](https://github.com/codestation/prxpatch),
+essentially only stripping the more elaborate patching done there and adjusting it for Sora no Woto.
+
+Sadly, it doesn't work, but it shouldn't take much effort to get working.
+We ultimately deemed it not worth the effort, especially considering it has to be installed to a memory stick,
+which would be yet another stage for the patcher. In addition, the relatively simple changes it was stripped
+down to would be better served by just a patch to the main game binary.
 
 ## Making a patch
 
@@ -489,3 +500,7 @@ Section 8 -- Interpretation.
      that apply to the Licensor or You, including from the legal
      processes of any jurisdiction or authority.
 ```
+
+The kernel module in the `prxpatch` directory is a derivative of [Codestation's prxpatch](https://github.com/codestation/prxpatch)
+and is this licensed under the GNU General Public License version 3 or later;
+see the `COPYING` file in that directory for details.
