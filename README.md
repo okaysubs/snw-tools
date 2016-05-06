@@ -17,6 +17,7 @@ For now, please enjoy the source code of the tools we created to translate the V
 * `patcher`: The source code for the patcher front-end.
 * `snw_gp_archive`: The bootstrap directory where the front-end, combined with the actual patches, creates the patcher contents from.
 * `tools`: The source code for the unpacking, translation and repacking tools.
+* `subs`: The subtitles and AVISynth scripts used to re-encode the OP and intro videos.
 * `prxpatch`: An abandoned prototype for a patcher PSP module.
 
 ## Included tools
