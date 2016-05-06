@@ -9,9 +9,12 @@ __pycache__
 *.txt
 *.dfc
 tmp*
+
 *.exe
 *.iso
 
 /prxpatch/*.o
 /prxpatch/*.elf
 /prxpatch/*.prx
+!/snw_gp_archive/*.exe
+!/snw_gp_archive/*/*.exe
