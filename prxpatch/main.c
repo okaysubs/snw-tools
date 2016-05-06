@@ -45,9 +45,6 @@ const struct {
     void *func;
 } utility_stubs[] = {
     { 0x50C4CD57, snw_save  }, /* sceUtilitySavedataInitStart */
-    { 0xF6269B82, snw_osk   }, /* sceUtilityOskInitStart */
-    { 0x4DB1E739, snw_net   }, /* sceUtilityNetconfInitStart */
-    { 0x0251B134, snw_shot  }, /* sceUtilityScreenshotInitStart */
     { 0,          NULL       }
 };
 
