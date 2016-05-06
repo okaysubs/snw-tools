@@ -163,6 +163,7 @@ Exceptions to this are the following files/directories:
 * `patcher/DiscUtils`: https://discutils.codeplex.com/SourceControl/latest#LICENSE.txt
 * `patcher/res/xz.exe`: http://git.tukaani.org/?p=xz.git;a=blob;f=COPYING;h=43c90d0598c55ab9f4edeb1781cdf5c549ca567e;hb=HEAD
 * `patcher/*/doot.ico`: (unknown license)
+* `snw_gp_archive/xz.exe`: http://git.tukaani.org/?p=xz.git;a=blob;f=COPYING;h=43c90d0598c55ab9f4edeb1781cdf5c549ca567e;hb=HEAD
 * `snw_gp_archive/bin/cyg*`: https://cygwin.com/licensing.html
 * `snw_gp_archive/bin/*iso*`: https://sourceforge.net/projects/cdrtools/
 * `snw_gp_archive/bin/ciso.exe`: https://sourceforge.net/p/ciso/code/2/tree/trunk/license
