@@ -67,21 +67,29 @@ down to would be better served by just a patch to the main game binary.
    Leave the patcher open.
 3. Use `extract.py` to recursively unpack the `data.afs` file located in `PSP_GAME/USRDIR` and to create a metadata file:
 
-    `python3 extract.py /path/to/data.afs data.meta yes`
+    ```sh
+    python3 extract.py /path/to/data.afs data.meta yes
+    ```
 
 4. Edit any of the files that are extracted. Images and fonts should be extracted to PNG files, dialogue and strings to plain text files.
    You can *optionally* copy only the files you deem relevant to another directory (e.g. a shared Dropbox folder) and use `alter.py` to copy over files from there
    to the original folder, as long as the folder structure is kept intact:
 
-    `python3 alter.py /path/to/data.afs /path/to/working/folder`
+    ```sh
+    python3 alter.py /path/to/data.afs /path/to/working/folder
+    ```
 
 5. *(Optional)* Use `consistency.py` to do some basic consistency checking on the script:
 
-    `python3 consistency.py /path/to/data.afs`
+    ```sh
+    python3 consistency.py /path/to/data.afs
+    ```
 
 5. Use `repack.py` with the generated metadata file to recursively repack the files into `data.afs`:
 
-    `python3 repack.py data.meta`
+    ```sh
+    python3 repack.py data.meta
+    ```
 
 6. *(Optional)* Use `embedded.py` to extract the embedded archive in `EBOOT.BIN` located in `PSP_GAME/SYSDIR` and make changes to it. This archive contains trivial things like the loading graphic shown at the very start:
 
