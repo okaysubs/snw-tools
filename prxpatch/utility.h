@@ -21,7 +21,6 @@
 
 #include <psputility.h>
 #include <psputility_savedata.h>
-#include <psputility_osk.h>
 
 typedef struct SceUtilityScreenshotParam {
     pspUtilityDialogCommon base;
@@ -29,6 +28,3 @@ typedef struct SceUtilityScreenshotParam {
 } SceUtilityScreenshotParam;
 
 int snw_save(SceUtilitySavedataParam *params);
-int snw_osk(SceUtilityOskParams *params);
-int snw_net(pspUtilityNetconfData *data);
-int snw_shot(SceUtilityScreenshotParam *params);

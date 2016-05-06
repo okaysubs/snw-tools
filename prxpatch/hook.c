@@ -20,7 +20,6 @@
  * along with Adhoc Emulator.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <pspsysmem_kernel.h>
 #include <psputilsforkernel.h>
 #include <psputils.h>
 #include <string.h>

@@ -91,7 +91,8 @@ down to would be better served by just a patch to the main game binary.
     python3 repack.py data.meta
     ```
 
-6. *(Optional)* Use `embedded.py` to extract the embedded archive in `EBOOT.BIN` located in `PSP_GAME/SYSDIR` and make changes to it. This archive contains trivial things like the loading graphic shown at the very start:
+6. *(Optional)* Use `embedded.py` to extract the embedded archive in `EBOOT.BIN` located in `PSP_GAME/SYSDIR` and make changes to its contents.
+   This archive contains trivial things like the loading graphic shown at the very start:
 
     ```sh
     python3 embedded.py extract /path/to/EBOOT.BIN archive.marc

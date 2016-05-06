@@ -18,7 +18,6 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include <pspkernel.h>
-#include <pspsysmem_kernel.h>
 #include <psputilsforkernel.h>
 #include <pspimpose_driver.h>
 #include <string.h>

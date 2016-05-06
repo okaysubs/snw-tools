@@ -23,9 +23,6 @@
 #include "utility.h"
 
 int (*sceUtilitySavedataInitStart_func)(SceUtilitySavedataParam * params) = NULL;
-int (*sceUtilityOskInitStart_func)(SceUtilityOskParams* params) = NULL;
-int (*sceUtilityNetconfInitStart_func)(pspUtilityNetconfData *data) = NULL;
-int (*sceUtilityScreenshotInitStart_func)(SceUtilityScreenshotParam *params) = NULL;
 
 int snw_save(SceUtilitySavedataParam *params) {
     if (sceUtilitySavedataInitStart_func == NULL) {
@@ -36,39 +33,4 @@ int snw_save(SceUtilitySavedataParam *params) {
 
     params->base.language = PSP_SYSTEMPARAM_LANGUAGE_ENGLISH;
     return sceUtilitySavedataInitStart_func(params);
-}
-
-int snw_osk(SceUtilityOskParams *params) {
-    if (sceUtilityOskInitStart_func == NULL) {
-        u32 k1 = pspSdkSetK1(0);
-        sceUtilityOskInitStart_func = (void *)sctrlHENFindFunction("sceUtility_Driver", "sceUtility", 0xF6269B82);
-        pspSdkSetK1(k1);
-    }
-
-    params->base.language = PSP_SYSTEMPARAM_LANGUAGE_ENGLISH;
-    params->data->language = PSP_UTILITY_OSK_LANGUAGE_JAPANESE;
-    params->data->inputtype = PSP_UTILITY_OSK_INPUTTYPE_ALL;
-    return sceUtilityOskInitStart_func(params);
-}
-
-int snw_net(pspUtilityNetconfData *data) {
-    if (sceUtilityNetconfInitStart_func == NULL) {
-        u32 k1 = pspSdkSetK1(0);
-        sceUtilityNetconfInitStart_func = (void *)sctrlHENFindFunction("sceUtility_Driver", "sceUtility", 0x4DB1E739);
-        pspSdkSetK1(k1);
-    }
-
-    data->base.language = PSP_SYSTEMPARAM_LANGUAGE_ENGLISH;
-    return sceUtilityNetconfInitStart_func(data);
-}
-
-int snw_shot(SceUtilityScreenshotParam *params) {
-    if (sceUtilityScreenshotInitStart_func == NULL) {
-        u32 k1 = pspSdkSetK1(0);
-        sceUtilityScreenshotInitStart_func = (void *)sctrlHENFindFunction("sceUtility_Driver", "sceUtility", 0x0251B134);
-        pspSdkSetK1(k1);
-    }
-
-    params->base.language = PSP_SYSTEMPARAM_LANGUAGE_ENGLISH;
-    return sceUtilityScreenshotInitStart_func(params);
 }
