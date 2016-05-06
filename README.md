@@ -146,7 +146,7 @@ Exceptions to this are the following files/directories:
 * `patcher/*/doot.ico`: (unknown license)
 * `snw_gp_archive/bin/cyg*`: https://cygwin.com/licensing.html
 * `snw_gp_archive/bin/*iso*`: https://sourceforge.net/projects/cdrtools/
-* `snw_gp_archive/bin/maxcso.exe`: https://github.com/unknownbrackets/maxcso/blob/46f2535a16ef0b14b0936f7c17de0c3867192589/LICENSE.md
+* `snw_gp_archive/bin/ciso.exe`: https://sourceforge.net/p/ciso/code/2/tree/trunk/license
 * `snw_gp_archive/bin/xdelta3.exe`: https://github.com/jmacd/xdelta/blob/f89cbc46d874b958678bef1a6bfa33912ddbcbd0/xdelta3/LICENSE
 * `snw_gp_archive/nsf/chiptune.exe`: https://github.com/bbbradsmith/nsfplay/blob/64c12149674c8cd7868a07545338429e7bab1ec2/nsfplay/nsfplay.h
 * `snw_gp_archive/nsf/nudzi_mi_sie.nsf`: http://famitracker.com/forum/posts.php?id=6130 (unknown license)
