@@ -1,12 +1,14 @@
 # *Sound of the Sky: Quintet of Maidens* translation tools
 
+*Just looking for the patch? Head over to https://ocv.me/snw to get it.*
+
 ## Overview
 
 [Sora no Woto: Otome no Gojuusou](https://vndb.org/v5304) is a PSP visual novel that uses
 a bunch of Dreamcast-era [CRI](https://en.wikipedia.org/wiki/CRI_Middleware) middleware.
 
 More interesting however were the (seemingly) custom image, script and font formats.
-A blog post is on its way describing our progress in figuring out the semantics of these formats.
+A blog post is on its way describing our process of figuring out the semantics of these formats.
 
 For now, please enjoy the source code of the tools we created to translate the VN.
 
