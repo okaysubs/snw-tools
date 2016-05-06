@@ -12,6 +12,13 @@ A blog post is on its way describing our process of figuring out the semantics o
 
 For now, please enjoy the source code of the tools we created to translate the VN.
 
+## Structure
+
+* `patcher`: The source code for the patcher front-end.
+* `snw_gp_archive`: The bootstrap directory where the front-end, combined with the actual patches, creates the patcher contents from.
+* `tools`: The source code for the unpacking, translation and repacking tools.
+* `prxpatch`: An abandoned prototype for a patcher PSP module.
+
 ## Included tools
 
 All below tools can be found in the `tools` directory.
@@ -62,7 +69,7 @@ down to would be better served by just a patch to the main game binary.
 
 ## Making a patch
 
-0. Compile the patcher from `patcher`. Make sure the patch contents will be bootstrapped by placing the `snw_gp_archive` directory in the same directory as the patcher executable.
+0. Compile the patcher in the `patcher` directory. Make sure the patch contents can be bootstrapped by placing the `snw_gp_archive` directory in the same directory as the patcher executable.
 1. Rip your copy of the VN from the UMD to an ISO file.
 2. Use the patcher to extract the ISO as follows: copy the VN ISO to the same directory as the patcher executable as `orig.iso`, then copy it again to `okay.iso`.
    Then run the patcher and answer 'Yes' to the question of whether you want to make a patch. The game files you want to edit are in the `tmp2` folder.
@@ -161,6 +168,7 @@ Exceptions to this are the following files/directories:
 * `snw_gp_archive/bin/ciso.exe`: https://sourceforge.net/p/ciso/code/2/tree/trunk/license
 * `snw_gp_archive/bin/xdelta3.exe`: https://github.com/jmacd/xdelta/blob/f89cbc46d874b958678bef1a6bfa33912ddbcbd0/xdelta3/LICENSE
 * `snw_gp_archive/nsf/chiptune.exe`: https://github.com/bbbradsmith/nsfplay/blob/64c12149674c8cd7868a07545338429e7bab1ec2/nsfplay/nsfplay.h
+* `snw_gp_archive/nsf/plugins`: https://github.com/bbbradsmith/nsfplay/blob/8589b385cc7cfb3e665adda5c86e50a054fe0f61/readme.txt
 * `snw_gp_archive/nsf/nudzi_mi_sie.nsf`: http://famitracker.com/forum/posts.php?id=6130 (unknown license)
 * `snw_gp_archive/nsf/famicom_disco.nsf`: https://www.youtube.com/watch?v=EeJF161wRoM (unknown license)
 
