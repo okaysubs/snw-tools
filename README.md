@@ -95,9 +95,9 @@ down to would be better served by just a patch to the main game binary.
 
 7. *(Optional)* Patch `EBOOT.BIN` to use English in the PSP OSD's system dialogs. We used a hex editor here:
 
-   * Change the bytes starting at offset `0x2E3F4` to `01 00 01 34`;
-   * Change the bytes starting at offset `0x2E412` to `04 00 41 AE`;
-   * Change the bytes starting at offset `0x2E730` to `01 00 04 34`.
+   * Change the bytes starting at offset `0x2E3F4` to `01 00 01 34` (`li $at, 1`);
+   * Change the bytes starting at offset `0x2E412` to `04 00 41 AE` (`sw $at, 4($s2)`);
+   * Change the bytes starting at offset `0x2E730` to `01 00 04 34` (`li $a1, 1`).
 
 8. *(Optional)* Hand-tweak `UMD_DATA.BIN` and `PARAM.SFO` (in the `PSP_GAME` folder) to edit the VN title and disc ID. We, again, just used a hex editor here.
 9. *(Optional)* Use, among others, [ffmpeg](https://ffmpeg.org/) to extract the video and audio streams from the movie files in `PSP_GAME/USRDIR/mv`, edit/translate/sub them, and remux them.
