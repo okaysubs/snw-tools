@@ -93,9 +93,15 @@ down to would be better served by just a patch to the main game binary.
     python3 embedded.py repack /path/to/EBOOT.BIN archive.marc
     ```
 
-7. *(Optional)* Hand-tweak `UMD_DATA.BIN` and `PARAM.SFO` (in the `PSP_GAME` folder) to edit the VN title and disc ID. We used a hex editor here, no specific tools.
-8. *(Optional)* Use, among others, [ffmpeg](https://ffmpeg.org/) to extract the video and audio streams from the movie files in `PSP_GAME/USRDIR/mv`, edit/translate/sub them, and remux them.
-9. Go back to the patcher, and tell it to proceed. It will generate a patcher from the new content in the `tmp2` folder compared to the original content in the `tmp1` folder and output it as `[OK]_Sound_of_the_Sky_Quintet_of_Maidens_[TLPatch_<version>][<crc>].exe` in the same folder as itself.     
+7. *(Optional)* Patch `EBOOT.BIN` to use English in the PSP OSD's system dialogs. We used a hex editor here:
+
+   * Change the bytes starting at offset `0x2E3F4` to `01 00 01 34`;
+   * Change the bytes starting at offset `0x2E412` to `04 00 41 AE`;
+   * Change the bytes starting at offset `0x2E730` to `01 00 04 34`.
+
+8. *(Optional)* Hand-tweak `UMD_DATA.BIN` and `PARAM.SFO` (in the `PSP_GAME` folder) to edit the VN title and disc ID. We, again, just used a hex editor here.
+9. *(Optional)* Use, among others, [ffmpeg](https://ffmpeg.org/) to extract the video and audio streams from the movie files in `PSP_GAME/USRDIR/mv`, edit/translate/sub them, and remux them.
+10. Go back to the patcher, and tell it to proceed. It will generate a patcher from the new content in the `tmp2` folder compared to the original content in the `tmp1` folder and output it as `[OK]_Sound_of_the_Sky_Quintet_of_Maidens_[TLPatch_<version>][<crc>].exe` in the same folder as itself.     
 
 ## License
 
