@@ -162,6 +162,8 @@ def toJIS(character):
             return base - 0x2
     elif 0x8e20 <= character <= (0x8e20+len(HALFMAP)**2):
         return HALFMAP[(character-0x8e20)//len(HALFMAP)]*0x100+HALFMAP[(character-0x8e20)%len(HALFMAP)]
+    elif character >= 0xFFF0:
+        return 47*0x100 + ord(hex(0xFFFF - character)[2])
     else:
         print('assumed unknown character {} was a space'.format(character))
         return 0x8140
@@ -186,6 +188,12 @@ def fromJIS(character):
         elif 0x9F <= res <= 0xFC:
             return base + 0x2
     elif 0x2020 <= character <= 0x7F7F: #handle half width hax shit
+        if character//0x100 == 47: # handle color codes
+            try:
+                colorcode = int(chr(character%0x100), 16)
+            except:
+                raise ValueError("The color code {} does not exist".format(character%0x100))
+            return 0xFFFF - colorcode
         if character//0x100 not in HALFMAP or character%0x100 not in HALFMAP:
             raise ValueError('the half-width-full-width escape {} was not in the range of allowed half-width characters'.format(hex(character)))
         return 0x8e20+len(HALFMAP)*HALFMAP.index(character//0x100)+HALFMAP.index(character%0x100)
@@ -198,7 +206,7 @@ def isvalid(bytestring):
     for character in bytestring:
         if firstchar:
             firstchar = False
-        elif 0x81 <= character <= toprange:
+        elif 0x81 <= character <= toprange or character == 0xFF:
             firstchar = True
         else:
             if not (0x00 <= character <=0x7F):
@@ -239,6 +247,7 @@ def loadstringfile(file, dest):
 
 def decode(bytestring):
     firstchar = None
+    toprange = (0x8e20+len(HALFMAP)**2)>>8
     charlist = []
     for character in bytestring:
         if firstchar:
@@ -247,7 +256,7 @@ def decode(bytestring):
                 charlist.append(0x5c)
             charlist.extend([chars>>8, chars&0xFF])
             firstchar = None
-        elif 0x81 <= character <= 0x91:
+        elif 0x81 <= character <= toprange or character == 0xFF:
             firstchar = character
         else:
             charlist.append(character)
